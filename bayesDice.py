@@ -1,5 +1,5 @@
 ##############################################################
-#### Beyes Dice program
+#### Bayes Dice program
 #### Author: Nathan N.
 #### Date Created: 8.4.2013
 #### Last Updated: 8.4.2013
