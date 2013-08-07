@@ -12,10 +12,10 @@
 ####		dice in a box. One die is picked out at random.
 ####		It's type is unknown at the start. The goal of this
 ####		program is to use Bayesian probability as a model
-####		for machine learning in order to make an decision
-####		in the face of incomplete information--in this case,
-####		a guess at the die type that was selected based on
-####		the random die roll results.
+####		for machine learning in order to make a decision in
+####		the face of incomplete information--in this case, a
+####		guess at the die type that was selected based on the
+####		random die roll results.
 ##############################################################
 
 #### PROGRAM IS MODELED OFF OF BAYESIAN PROBABILITY TABLE BELOW ####
