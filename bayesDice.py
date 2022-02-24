@@ -98,13 +98,13 @@ class Dice:
 
 def printGuess():
 	i = 0
-	print 'Best guess:'
+	print('Best guess:')
 	for die in dice.diceTypes:
 		asterisk = ''
 		if dice.posteriors[i] >= .8:
 			asterisk = '*'
 			dice.guess = die
-		print '{0}{1}-sided die: {2} percent probability.'.format(asterisk, die, round(dice.posteriors[i] * 100, 2))
+		print(f'{asterisk}{die}-sided die: {round(dice.posteriors[i] * 100, 2)} percent probability.')
 		i += 1
 
 
@@ -112,23 +112,23 @@ def main():
 	promptAnyKey = None
 	rollagain = 'y'
 	i = 0
-	print '\n-------------------------------------\n'
-	print 'There are {0} dice in a box full of multisided dice: {1}.'.format(len(dice.diceTypes), dice.diceTypes)
-	print 'You have selected one at random.'
-	print 'This program will attempt to guess which die was picked based on your rolls.\n'
+	print('\n-------------------------------------\n')
+	print(f'There are {len(dice.diceTypes)} dice in a box full of multisided dice: {dice.diceTypes}.')
+	print('You have selected one at random.')
+	print('This program will attempt to guess which die was picked based on your rolls.\n')
 
 	dice.selectRandomDie()
 
 	while promptAnyKey is None:
-		promptAnyKey = raw_input('Press enter to roll.\n')
+		promptAnyKey = input('Press enter to roll.\n')
 
 	while rollagain != 'x':
 		i += 1
 		dice.roll()
-		print '\nYou rolled a {0}.\n'.format(dice.singleRollResult)
+		print(f'\nYou rolled a {dice.singleRollResult}.\n')
 		dice.updateGuess()
 		printGuess()
-		rollagain = raw_input('\nPress ENTER to roll. (x to exit)\n')
+		rollagain = input('\nPress ENTER to roll. (x to exit)\n')
 		rollagain = rollagain.lower()
 
 	if dice.guess == dice.dieType:
@@ -136,7 +136,7 @@ def main():
 	else:
 		status = 'The program did NOT guess correctly!'
 
-	print 'The die selected was a {0}-sided die! {1} {2} total rolls'.format(dice.dieType, status, i)
+	print(f'The die selected was a {dice.dieType}-sided die! {status} {i} total rolls')
 	sys.exit()
 
 if __name__ == '__main__':
